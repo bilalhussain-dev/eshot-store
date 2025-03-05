@@ -4,5 +4,7 @@
  <p><%= product.description  %></p>
  <p><%= product.price  %></p>
   <p><%= product.stock  %></p>
-  <br>
+
+    <%= link_to "Show Product", product_path(product) %>
+  <hr>
 <% end %>
