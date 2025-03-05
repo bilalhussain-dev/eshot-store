@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
+      flash[:notice] = "Product successfully added!"
       redirect_to products_path
     else
       render :new, status: :unprocessable_entity
@@ -22,10 +23,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    flash[:notice] = "Edited Successfully"
   end
 
   def update
     if @product.update(product_params)
+      flash[:notice] = "Product successfully updated!"
       redirect_to products_path
     else
       render :edit, status: :unprocessable_entity

@@ -11,7 +11,15 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+  <% flash.each do |type, msg| %>
+    <% if type == 'notice' %>
+      <p class="flash notice"><%= msg %></p>
+    <% else %>
+      <p class="flash alert"><%= msg %></p>
+    <% end %>
+  <% end %>
+
+  <%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
 </html>
