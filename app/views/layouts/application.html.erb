@@ -11,6 +11,9 @@
   </head>
 
   <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
   <% flash.each do |type, msg| %>
     <% if type == 'notice' %>
       <p class="flash notice"><%= msg %></p>

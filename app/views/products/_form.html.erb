@@ -1,7 +1,21 @@
+<% if @product.errors %>
+  <% @product.errors.full_messages.each do |error| %>
+    <div>* <%= error %></div>
+  <% end %>
+<% end %>
+
 <%= form_with(model: @product) do |f| %>
-  <%= f.text_field :title, placeholder: 'Title' %>
-  <%= f.text_area :description, placeholder: "Details" %>
-  <%= f.number_field :price %>
-  <%= f.number_field :stock %>
+  <div>
+    <%= f.text_field :title, placeholder: 'Title' %>
+  </div>
+  <div>
+    <%= f.text_area :description, placeholder: "Details" %>
+  </div>
+  <div>
+    <%= f.number_field :price %>
+  </div>
+  <div>
+    <%= f.number_field :stock %>
+  </div>
   <%= f.submit %>
 <% end %>
